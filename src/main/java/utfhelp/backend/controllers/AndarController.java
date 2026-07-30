@@ -1,6 +1,7 @@
 package utfhelp.backend.controllers;
 
 import org.springframework.web.bind.annotation.*;
+import utfhelp.backend.dtos.request.AndarRequestDTO;
 import utfhelp.backend.models.Andar;
 import utfhelp.backend.services.AndarService;
 
@@ -27,12 +28,12 @@ public class AndarController {
     }
 
     @PostMapping
-    public Andar post(@RequestBody Andar andar){
+    public Andar post(@RequestBody AndarRequestDTO andar){
         return andarService.post(andar);
     }
 
     @PutMapping("/{id}")
-    public Andar put(@RequestBody Andar andar, @PathVariable Long id){
+    public Andar put(@RequestBody AndarRequestDTO andar, @PathVariable Long id){
         return andarService.put(andar, id);
     }
 

@@ -1,6 +1,7 @@
 package utfhelp.backend.controllers;
 
 import org.springframework.web.bind.annotation.*;
+import utfhelp.backend.dtos.request.ArestaGrafoRequestDTO;
 import utfhelp.backend.models.ArestaGrafo;
 import utfhelp.backend.services.ArestaGrafoService;
 
@@ -27,12 +28,12 @@ public class ArestaGrafoController {
     }
 
     @PostMapping
-    public ArestaGrafo post(@RequestBody ArestaGrafo aresta){
+    public ArestaGrafo post(@RequestBody ArestaGrafoRequestDTO aresta){
         return arestaGrafoService.post(aresta);
     }
 
     @PutMapping("/{id}")
-    public ArestaGrafo put(@RequestBody ArestaGrafo aresta, @PathVariable Long id){
+    public ArestaGrafo put(@RequestBody ArestaGrafoRequestDTO aresta, @PathVariable Long id){
         return arestaGrafoService.put(aresta, id);
     }
 

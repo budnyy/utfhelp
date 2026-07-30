@@ -1,6 +1,7 @@
 package utfhelp.backend.controllers;
 
 import org.springframework.web.bind.annotation.*;
+import utfhelp.backend.dtos.request.FeedbackRequestDTO;
 import utfhelp.backend.models.Feedback;
 import utfhelp.backend.services.FeedbackService;
 
@@ -27,12 +28,12 @@ public class FeedbackController {
     }
 
     @PostMapping
-    public Feedback post(@RequestBody Feedback feedback){
+    public Feedback post(@RequestBody FeedbackRequestDTO feedback){
         return feedbackService.post(feedback);
     }
 
     @PutMapping("/{id}")
-    public Feedback put(@RequestBody Feedback feedback, @PathVariable Long id){
+    public Feedback put(@RequestBody FeedbackRequestDTO feedback, @PathVariable Long id){
         return feedbackService.put(feedback, id);
     }
 

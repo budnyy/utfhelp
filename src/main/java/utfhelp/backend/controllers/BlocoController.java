@@ -1,6 +1,7 @@
 package utfhelp.backend.controllers;
 
 import org.springframework.web.bind.annotation.*;
+import utfhelp.backend.dtos.request.BlocoRequestDTO;
 import utfhelp.backend.models.Bloco;
 import utfhelp.backend.services.BlocoService;
 
@@ -27,12 +28,12 @@ public class BlocoController {
     }
 
     @PostMapping
-    public Bloco post(@RequestBody Bloco bloco){
+    public Bloco post(@RequestBody BlocoRequestDTO bloco){
         return blocoService.post(bloco);
     }
 
     @PutMapping("/{id}")
-    public Bloco put(@RequestBody Bloco bloco, @PathVariable Long id){
+    public Bloco put(@RequestBody BlocoRequestDTO bloco, @PathVariable Long id){
         return blocoService.put(bloco, id);
     }
 

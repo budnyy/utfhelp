@@ -2,7 +2,7 @@ package utfhelp.backend.services;
 
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-import utfhelp.backend.models.ArestaGrafo;
+import utfhelp.backend.dtos.request.BlocoRequestDTO;
 import utfhelp.backend.models.Bloco;
 import utfhelp.backend.repositories.BlocoRepository;
 
@@ -27,12 +27,17 @@ public class BlocoService {
         return bloco.orElse(null);
     }
 
-    public Bloco post(Bloco bloco){
+    public Bloco post(BlocoRequestDTO dto) {
+        Bloco bloco = new Bloco();
+
+        bloco.setNome(dto.getNome());
+        bloco.setDescricao(dto.getDescricao());
+
         return blocoRepository.save(bloco);
     }
 
     @Transactional
-    public Bloco put(Bloco novo_bloco, Long id){
+    public Bloco put(BlocoRequestDTO novo_bloco, Long id){
         Bloco bloco = blocoRepository.findById(id).orElseThrow();
 
         bloco.setDescricao(novo_bloco.getDescricao());

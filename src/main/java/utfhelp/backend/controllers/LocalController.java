@@ -1,6 +1,7 @@
 package utfhelp.backend.controllers;
 
 import org.springframework.web.bind.annotation.*;
+import utfhelp.backend.dtos.request.LocalRequestDTO;
 import utfhelp.backend.models.Local;
 import utfhelp.backend.services.LocalService;
 
@@ -27,12 +28,12 @@ public class LocalController {
     }
 
     @PostMapping
-    public Local post(@RequestBody Local local){
+    public Local post(@RequestBody LocalRequestDTO local){
         return localService.post(local);
     }
 
     @PutMapping("/{id}")
-    public Local put(@RequestBody Local local, @PathVariable Long id){
+    public Local put(@RequestBody LocalRequestDTO local, @PathVariable Long id){
         return localService.put(local, id);
     }
 

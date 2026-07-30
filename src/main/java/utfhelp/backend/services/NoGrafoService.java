@@ -2,7 +2,7 @@ package utfhelp.backend.services;
 
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-import utfhelp.backend.models.Feedback;
+import utfhelp.backend.dtos.request.NoGrafoRequestDTO;
 import utfhelp.backend.models.NoGrafo;
 import utfhelp.backend.repositories.NoGrafoRepository;
 
@@ -27,12 +27,17 @@ public class NoGrafoService {
         return noGrafo.orElse(null);
     }
 
-    public NoGrafo post(NoGrafo noGrafo){
+    public NoGrafo post(NoGrafoRequestDTO dto){
+        NoGrafo noGrafo = new NoGrafo();
+
+        noGrafo.setX(dto.getX());
+        noGrafo.setY(dto.getY());
+
         return noGrafoRepository.save(noGrafo);
     }
 
     @Transactional
-    public NoGrafo put(NoGrafo novo_noGrafo, Long id){
+    public NoGrafo put(NoGrafoRequestDTO novo_noGrafo, Long id){
         NoGrafo noGrafo = noGrafoRepository.findById(id).orElseThrow();
 
         noGrafo.setX(novo_noGrafo.getX());

@@ -1,6 +1,7 @@
 package utfhelp.backend.controllers;
 
 import org.springframework.web.bind.annotation.*;
+import utfhelp.backend.dtos.request.CategoriaRequestDTO;
 import utfhelp.backend.models.Categoria;
 import utfhelp.backend.services.CategoriaService;
 
@@ -27,12 +28,12 @@ public class CategoriaController {
     }
 
     @PostMapping
-    public Categoria post(@RequestBody Categoria categoria){
+    public Categoria post(@RequestBody CategoriaRequestDTO categoria){
         return categoriaService.post(categoria);
     }
 
     @PutMapping("/{id}")
-    public Categoria put(@RequestBody Categoria categoria, @PathVariable Long id){
+    public Categoria put(@RequestBody CategoriaRequestDTO categoria, @PathVariable Long id){
         return categoriaService.put(categoria, id);
     }
 

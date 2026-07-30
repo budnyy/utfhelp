@@ -1,6 +1,7 @@
 package utfhelp.backend.controllers;
 
 import org.springframework.web.bind.annotation.*;
+import utfhelp.backend.dtos.request.NoGrafoRequestDTO;
 import utfhelp.backend.models.NoGrafo;
 import utfhelp.backend.services.NoGrafoService;
 
@@ -27,12 +28,12 @@ public class NoGrafoController {
     }
 
     @PostMapping
-    public NoGrafo post(@RequestBody NoGrafo noGrafo){
+    public NoGrafo post(@RequestBody NoGrafoRequestDTO noGrafo){
         return noGrafoService.post(noGrafo);
     }
 
     @PutMapping("/{id}")
-    public NoGrafo put(@RequestBody NoGrafo noGrafo, @PathVariable Long id){
+    public NoGrafo put(@RequestBody NoGrafoRequestDTO noGrafo, @PathVariable Long id){
         return noGrafoService.put(noGrafo, id);
     }
 

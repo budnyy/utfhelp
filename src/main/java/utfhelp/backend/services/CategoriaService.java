@@ -2,6 +2,7 @@ package utfhelp.backend.services;
 
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
+import utfhelp.backend.dtos.request.CategoriaRequestDTO;
 import utfhelp.backend.models.Categoria;
 import utfhelp.backend.repositories.CategoriaRepository;
 
@@ -26,12 +27,15 @@ public class CategoriaService {
         return categoria.orElse(null);
     }
 
-    public Categoria post(Categoria categoria){
+    public Categoria post(CategoriaRequestDTO dto){
+        Categoria categoria = new Categoria();
+        categoria.setNome(dto.getNome());
+
         return categoriaRepository.save(categoria);
     }
 
     @Transactional
-    public Categoria put(Categoria novo_categoria, Long id){
+    public Categoria put(CategoriaRequestDTO novo_categoria, Long id){
         Categoria categoria = categoriaRepository.findById(id).orElseThrow();
 
         categoria.setNome(novo_categoria.getNome());
