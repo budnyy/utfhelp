@@ -1,8 +1,6 @@
 package utfhelp.backend.models;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,6 +16,7 @@ public class Andar {
     private Long id;
 
     @Setter
+    @Column(nullable = false)
     private Integer num_andar;
 
     @Setter

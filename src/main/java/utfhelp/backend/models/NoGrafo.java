@@ -1,7 +1,6 @@
 package utfhelp.backend.models;
 
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,9 +16,11 @@ public class NoGrafo {
     private Long id;
 
     @Setter
+    @Column(nullable = false)
     private Integer x;
 
     @Setter
+    @Column(nullable = false)
     private Integer y;
 
     public NoGrafo(Integer x, Integer y){

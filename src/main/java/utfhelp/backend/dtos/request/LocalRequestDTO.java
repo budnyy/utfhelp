@@ -8,7 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 public class LocalRequestDTO {
     private String nome;
-    private String tipo;
     private String descricao;
     private Integer coord_x;
     private Integer coord_y;

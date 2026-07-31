@@ -46,7 +46,6 @@ public class LocalService {
         local.setNome(dto.getNome());
         local.setCategoria(categoria);
         local.setDescricao(dto.getDescricao());
-        local.setTipo(dto.getTipo());
         local.setAndar(andar);
         local.setCoord_x(dto.getCoord_x());
         local.setCoord_y(dto.getCoord_y());
@@ -65,7 +64,6 @@ public class LocalService {
         local.setNome(dto.getNome());
         local.setCategoria(categoria);
         local.setDescricao(dto.getDescricao());
-        local.setTipo(dto.getTipo());
         local.setAndar(andar);
         local.setCoord_x(dto.getCoord_x());
         local.setCoord_y(dto.getCoord_y());

@@ -16,6 +16,7 @@ public class Bloco {
     private Long id;
 
     @Setter
+    @Column(nullable = false)
     private String nome;
 
     @Setter

@@ -16,6 +16,7 @@ public class Categoria {
     private Long id;
 
     @Setter
+    @Column(nullable = false)
     private String nome;
 
     public Categoria(String nome){

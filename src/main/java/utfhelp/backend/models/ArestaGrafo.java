@@ -26,6 +26,7 @@ public class ArestaGrafo {
     private NoGrafo no_b;
 
     @Setter
+    @Column(nullable = false)
     private Integer distancia;
 
     public ArestaGrafo(NoGrafo no_a, NoGrafo no_b, Integer distancia){

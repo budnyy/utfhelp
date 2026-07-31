@@ -18,9 +18,11 @@ public class Feedback {
     private Long id;
 
     @Setter
+    @Column(nullable = false)
     private String mensagem;
 
     @Setter
+    @Column(nullable = false)
     private String tipo;
 
     @Setter

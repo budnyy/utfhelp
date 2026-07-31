@@ -18,11 +18,18 @@ public class Local {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String nome;
-    private String tipo;
+
+    @Column(nullable = false)
     private Integer coord_x;
+
+    @Column(nullable = false)
     private Integer coord_y;
+
+    @Column(nullable = false)
     private Integer coord_z;
+
     private String descricao;
 
     @OneToOne
@@ -34,14 +41,12 @@ public class Local {
     private Categoria categoria;
 
     public Local(String nome,
-                 String tipo,
                  Integer coord_x,
                  Integer coord_y,
                  Integer coord_z,
                  String descricao,
                  Andar andar){
         this.nome = nome;
-        this.tipo = tipo;
         this.coord_x = coord_x;
         this.coord_y = coord_y;
         this.coord_z = coord_z;
